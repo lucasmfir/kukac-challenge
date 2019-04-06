@@ -34,7 +34,8 @@ server.get("/change", (req, res) => {
 
   if (total > 0 && money >= total) {
     const changeResp = change(total, money)
-    res.send(`${changeResp}`);
+    // res.send(`${changeResp}`);
+    res.send(`${JSON.stringify(changeResp)}`);
   } else {
     res.send(`${invalidDataMsg}`);
   }
